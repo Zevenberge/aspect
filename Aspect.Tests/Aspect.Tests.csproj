@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Aspect\Aspect.csproj" />
     <ProjectReference Include="..\Aspect.Extensions.DependencyInjection\Aspect.Extensions.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Aspect.Extensions.AspNetCore\Aspect.Extensions.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>
