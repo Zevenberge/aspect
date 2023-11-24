@@ -6,7 +6,7 @@ internal static class ThrowHelper
     {
         if(!serviceType.IsAssignableTo(typeof(IAspectService)))
         {
-            throw new ArgumentException(nameof(serviceType), $"{serviceType.FullName} is not assignable to {nameof(IAspectService)}");
+            throw new ArgumentException($"{serviceType.FullName} is not assignable to {nameof(IAspectService)}", nameof(serviceType));
         }
     }
 
@@ -14,11 +14,11 @@ internal static class ThrowHelper
     {
         if(!serviceType.IsClass || serviceType.IsAbstract)
         {
-            throw new ArgumentException(nameof(serviceType), $"Cannot create an instance of abstract class or interface {serviceType.FullName}");
+            throw new ArgumentException($"Cannot create an instance of abstract class or interface {serviceType.FullName}", nameof(serviceType));
         }
         if(!serviceType.GetConstructors().Any(c => c.IsPublic && c.GetParameters().Length == 0))
         {
-            throw new ArgumentException(nameof(serviceType), $"{serviceType.FullName} does not contain a parameterless public constructor");
+            throw new ArgumentException($"{serviceType.FullName} does not contain a parameterless public constructor", nameof(serviceType));
         }
     }
 }
